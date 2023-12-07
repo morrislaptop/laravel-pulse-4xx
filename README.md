@@ -1,3 +1,5 @@
+<p align="center"><img src="/art/screenshot.png" alt="4XX requests for Laravel Pulse"></p>
+
 # Laravel Pulse Card for 4XX responses like validation, auth and not found
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/morrislaptop/laravel-pulse-4xx.svg?style=flat-square)](https://packagist.org/packages/morrislaptop/laravel-pulse-4xx)
@@ -46,7 +48,7 @@ Then, you can modify the `dashboard.blade.php` file:
 
 ```diff
 <x-pulse>
-+    <livewire:4xx cols='4' rows='2' />
++   <livewire:4xx cols='4' rows='2' />
 
     <livewire:pulse.servers cols="full" />
 
