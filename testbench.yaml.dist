@@ -3,7 +3,11 @@ migrations:
 
 env:
   DB_CONNECTION: 'mysql'
+  DB_USERNAME: 'root'
+  DB_DATABASE: 'laravel-pulse-4xx'
 
 workbench:
   discovers:
     web: true
+    views: true
+    config: true
