@@ -25,7 +25,7 @@ Add the `FourXxRecorder` to the `config/pulse.php` file.
 return [
     // ...
     'recorders' => [
-+        \Morrislaptop\LaravelPulse4xx\FourXxRecorder::class => [
++       \Morrislaptop\LaravelPulse4xx\FourXxRecorder::class => [
 +           'enabled' => env('PULSE_4XX_ENABLED', true),
 +           'sample_rate' => env('PULSE_4XX_SAMPLE_RATE', 1),
 +           'ignore' => [
