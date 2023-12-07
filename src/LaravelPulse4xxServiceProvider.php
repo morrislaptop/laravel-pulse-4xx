@@ -4,7 +4,6 @@ namespace Morrislaptop\LaravelPulse4xx;
 
 use Illuminate\Contracts\Foundation\Application;
 use Livewire\LivewireManager;
-use Morrislaptop\LaravelPulse4xx\Commands\LaravelPulse4xxCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 
@@ -24,5 +23,5 @@ class LaravelPulse4xxServiceProvider extends PackageServiceProvider
         $this->callAfterResolving('livewire', function (LivewireManager $livewire, Application $app) {
             $livewire->component('4xx', FourXxCard::class);
         });
-}
+    }
 }

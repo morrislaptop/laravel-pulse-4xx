@@ -5,7 +5,6 @@ use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 use Laravel\Pulse\Facades\Pulse;
-use Laravel\Pulse\Recorders\SlowRequests;
 use Morrislaptop\LaravelPulse4xx\FourXxRecorder;
 
 use function Pest\Laravel\get;

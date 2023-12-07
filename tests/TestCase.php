@@ -2,9 +2,8 @@
 
 namespace Morrislaptop\LaravelPulse4xx\Tests;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Laravel\Pulse\PulseServiceProvider;
+use Livewire\LivewireServiceProvider;
 use Morrislaptop\LaravelPulse4xx\FourXxRecorder;
 use Morrislaptop\LaravelPulse4xx\LaravelPulse4xxServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
@@ -14,6 +13,7 @@ class TestCase extends Orchestra
     protected function getPackageProviders($app)
     {
         return [
+            LivewireServiceProvider::class,
             PulseServiceProvider::class,
             LaravelPulse4xxServiceProvider::class,
         ];
@@ -27,5 +27,7 @@ class TestCase extends Orchestra
     public function getEnvironmentSetUp($app)
     {
         config()->set('pulse.recorders.'.FourXxRecorder::class.'.sample_rate', 1);
+
+        config(['views.paths' => [__DIR__.'/resources/views']]);
     }
 }

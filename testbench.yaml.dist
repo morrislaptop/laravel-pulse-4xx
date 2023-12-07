@@ -1,3 +1,6 @@
+migrations:
+  - vendor/laravel/pulse/database/migrations
+
 env:
   DB_CONNECTION: 'mysql'
 
