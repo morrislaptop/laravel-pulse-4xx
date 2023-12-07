@@ -2,9 +2,9 @@
 
 namespace Morrislaptop\LaravelPulse4xx;
 
+use Morrislaptop\LaravelPulse4xx\Commands\LaravelPulse4xxCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Morrislaptop\LaravelPulse4xx\Commands\LaravelPulse4xxCommand;
 
 class LaravelPulse4xxServiceProvider extends PackageServiceProvider
 {
