@@ -230,6 +230,6 @@ return [
             'ignore' => [
                 '#^/pulse$#', // Pulse dashboard...
             ],
-        ]
+        ],
     ],
 ];
