@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Morrislaptop\LaravelPulse4xx\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class LaravelPulse4xxCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-pulse-4xx';
 
     public $description = 'My command';
 

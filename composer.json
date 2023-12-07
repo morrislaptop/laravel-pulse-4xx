@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "morrislaptop/laravel-pulse-4xx",
+    "description": "Laravel Pulse Card for 4XX responses like validation, auth and not found",
     "keywords": [
-        ":vendor_name",
+        "Craig Morris",
         "laravel",
-        ":package_slug"
+        "laravel-pulse-4xx"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/morrislaptop/laravel-pulse-4xx",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Craig Morris",
+            "email": "craig.michael.morris@gmail.com",
             "role": "Developer"
         }
     ],
@@ -35,19 +35,19 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/"
+            "Morrislaptop\\LaravelPulse4xx\\": "src/",
+            "Morrislaptop\\LaravelPulse4xx\\Database\\Factories\\": "database/factories/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests/",
+            "Morrislaptop\\LaravelPulse4xx\\Tests\\": "tests/",
             "Workbench\\App\\": "workbench/app/"
         }
     },
     "scripts": {
         "post-autoload-dump": "@composer run prepare",
-        "clear": "@php vendor/bin/testbench package:purge-skeleton --ansi",
+        "clear": "@php vendor/bin/testbench package:purge-laravel-pulse-4xx --ansi",
         "prepare": "@php vendor/bin/testbench package:discover --ansi",
         "build": [
             "@composer run prepare",
@@ -73,10 +73,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Morrislaptop\\LaravelPulse4xx\\LaravelPulse4xxServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "LaravelPulse4xx": "Morrislaptop\\LaravelPulse4xx\\Facades\\LaravelPulse4xx"
             }
         }
     },
