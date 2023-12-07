@@ -1,0 +1,6 @@
+env:
+  DB_CONNECTION: 'mysql'
+
+workbench:
+  discovers:
+    web: true

@@ -5,15 +5,7 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/morrislaptop/laravel-pulse-4xx/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/morrislaptop/laravel-pulse-4xx/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/morrislaptop/laravel-pulse-4xx.svg?style=flat-square)](https://packagist.org/packages/morrislaptop/laravel-pulse-4xx)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
-
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/laravel-pulse-4xx.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/laravel-pulse-4xx)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+Laravel Pulse Card for 4XX responses like validation, auth and not found.
 
 ## Installation
 
@@ -23,37 +15,58 @@ You can install the package via composer:
 composer require morrislaptop/laravel-pulse-4xx
 ```
 
-You can publish and run the migrations with:
+## Register the recorder
 
-```bash
-php artisan vendor:publish --tag="laravel-pulse-4xx-migrations"
-php artisan migrate
-```
+Add the `FourXxRecorder` to the `config/pulse.php` file. 
 
-You can publish the config file with:
-
-```bash
-php artisan vendor:publish --tag="laravel-pulse-4xx-config"
-```
-
-This is the contents of the published config file:
-
-```php
+```diff
 return [
-];
+    // ...
+    'recorders' => [
++        \Morrislaptop\LaravelPulse4xx\FourXxRecorder::class => [
++           'enabled' => env('PULSE_4XX_ENABLED', true),
++           'sample_rate' => env('PULSE_4XX_SAMPLE_RATE', 1),
++           'ignore' => [
++               '#^/wp-admin#', // Classic WordPress...
++           ],
++       ],
+    ]
+]
 ```
 
-Optionally, you can publish the views using
+## Add to your dashboard
+
+To add the card to the Pulse dashboard, you must first [publish the vendor view](https://laravel.com/docs/10.x/pulse#dashboard-customization).
 
 ```bash
-php artisan vendor:publish --tag="laravel-pulse-4xx-views"
+php artisan vendor:publish --tag=pulse-dashboard
 ```
 
-## Usage
+Then, you can modify the `dashboard.blade.php` file:
 
-```php
-$laravelPulse4xx = new Morrislaptop\LaravelPulse4xx();
-echo $laravelPulse4xx->echoPhrase('Hello, Morrislaptop!');
+```diff
+<x-pulse>
++    <livewire:4xx cols='4' rows='2' />
+
+    <livewire:pulse.servers cols="full" />
+
+    <livewire:pulse.usage cols="4" rows="2" />
+
+    <livewire:pulse.queues cols="4" />
+
+    <livewire:pulse.cache cols="4" />
+
+    <livewire:pulse.slow-queries cols="8" />
+
+    <livewire:pulse.exceptions cols="6" />
+
+    <livewire:pulse.slow-requests cols="6" />
+
+    <livewire:pulse.slow-jobs cols="6" />
+
+    <livewire:pulse.slow-outgoing-requests cols="6" />
+
+</x-pulse>
 ```
 
 ## Testing
