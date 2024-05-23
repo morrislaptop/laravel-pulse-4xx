@@ -36,7 +36,7 @@ class FourXxRecorder
         $this->afterResolving(
             $app,
             Kernel::class,
-            fn (Kernel $kernel) => $kernel->whenRequestLifecycleIsLongerThan(-1, $record) // @phpstan-ignore method.notFound
+            fn (Kernel $kernel) => $kernel->whenRequestLifecycleIsLongerThan(-1, $record)
         );
     }
 
