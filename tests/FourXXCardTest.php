@@ -32,7 +32,7 @@ it('renders 4xx requests', function () {
     Pulse::record('4xx_request', $request1, now()->timestamp)->max()->count();
     Pulse::record('4xx_request', $request2, now()->timestamp)->max()->count();
 
-    Pulse::store();
+    Pulse::ingest();
 
     Livewire::test(FourXxCard::class, ['lazy' => false])
         ->assertViewHas('fourXxRequests', collect([
