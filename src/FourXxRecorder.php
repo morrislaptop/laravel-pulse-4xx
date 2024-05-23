@@ -7,6 +7,7 @@ use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\Http\Kernel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Str;
 use Laravel\Pulse\Concerns\ConfiguresAfterResolving;
 use Laravel\Pulse\Pulse;
 use Laravel\Pulse\Recorders\Concerns;
@@ -46,7 +47,7 @@ class FourXxRecorder
             return;
         }
 
-        $path = $request->path();
+        $path = Str::start($request->path(), '/');
 
         if ($this->shouldIgnore($path)) {
             return;
