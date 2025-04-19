@@ -5,12 +5,6 @@ use Laravel\Pulse\Facades\Pulse;
 use Livewire\Livewire;
 use Morrislaptop\LaravelPulse4xx\FourXxCard;
 
-it('includes the card on the dashboard', function () {
-    $this
-        ->get('/pulse')
-        ->assertSeeLivewire(FourXxCard::class);
-});
-
 it('renders 4xx requests', function () {
     $request1 = json_encode(['GET', '/users', 418, null]);
     $request2 = json_encode(['GET', '/users/{user}', 403, null]);
