@@ -2,6 +2,18 @@
 
 All notable changes to `laravel-pulse-4xx` will be documented in this file.
 
+## v0.3.0 - 2025-04-24
+
+### What's Changed
+
+* Laravel 12.x Compatibility by @laravel-shift in https://github.com/morrislaptop/laravel-pulse-4xx/pull/5
+
+### New Contributors
+
+* @laravel-shift made their first contribution in https://github.com/morrislaptop/laravel-pulse-4xx/pull/5
+
+**Full Changelog**: https://github.com/morrislaptop/laravel-pulse-4xx/compare/v0.2.0...v0.3.0
+
 ## v0.2.0 - 2024-05-24
 
 ### What's Changed
