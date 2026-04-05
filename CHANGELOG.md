@@ -2,6 +2,14 @@
 
 All notable changes to `laravel-pulse-4xx` will be documented in this file.
 
+## v0.4.0 - 2026-04-05
+
+### What's Changed
+
+* Laravel 13.x Compatibility by @laravel-shift in https://github.com/morrislaptop/laravel-pulse-4xx/pull/6
+
+**Full Changelog**: https://github.com/morrislaptop/laravel-pulse-4xx/compare/v0.3.0...v0.4.0
+
 ## v0.3.0 - 2025-04-24
 
 ### What's Changed
